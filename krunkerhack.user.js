@@ -315,7 +315,6 @@ class Krunkbot {
       <div>
         <style>
           #krunkbotInfoBox {
-            display: none;
             text-align: left;
             width: 310px;
             z-index: 3;
