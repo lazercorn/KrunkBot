@@ -99,7 +99,7 @@ class Aimbot extends Module {
             }
         }
         if (!isLockedOn) {
-            this.control.camLookAt(null);
+            this.control.zqrU(null);
             this.control.target = null;
             if (this.getCurrentMode() === AimbotMode.Quickscoper) {
                 this.control.mouseDownL = 0;
@@ -141,7 +141,7 @@ class Aimbot extends Module {
         return true;
     }
     lookAt(target) {
-        this.control.camLookAt(target.x2, target.y2 + target.height - 1.5 - 2.5 * target.crouchVal - this.me.recoilAnimY * 0.3 * 25, target.z2);
+        this.control.zqrU(target.x2, target.y2 + target.height - 1.5 - 2.5 * target.crouchVal - this.me.recoilAnimY * 0.3 * 25, target.z2);
     }
     distance(player1, player2) {
         const dx = player1.x - player2.x;
@@ -438,7 +438,7 @@ function patchOnKeyPressed(script) {
 }
 
 function patchForAimbot(script) {
-    return applyPatch(script, 'patchForAimbot', /{if\(this\.target\){(.+)}},this.camLookAt=/, ($0, $1) => {
+    return applyPatch(script, 'patchForAimbot', /{if\(this\.target\){(.+)}},this.zqrU=/, ($0, $1) => {
         return `
       {
         if (this.target) {
@@ -453,7 +453,7 @@ function patchForAimbot(script) {
 
           ${$1}
         }
-      }, this.camLookAt =
+      }, this.zqrU =
     `;
     });
 }
