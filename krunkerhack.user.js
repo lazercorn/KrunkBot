@@ -3,7 +3,7 @@
 // @version      2019.05.08
 // @description  Aimbot, Unlimited Ammo, Auto Heal, ESP, Wall Hack, Unlimited Ammo...
 // @author       MR.Coder, adware free version by omercnet
-// @namespace    omercnet
+// @namespace MR.Coder
 // @updateURL    https://github.com/omercnet/KrunkBot/raw/master/krunkerhack.user.js
 // @downloadURL  https://github.com/omercnet/KrunkBot/raw/master/krunkerhack.user.js
 // @match        *://krunker.io/*
@@ -250,6 +250,65 @@ class Menu extends Module {
     }
 }
 
+class NoRecoil extends Module {
+    getName() {
+        return 'No Recoil';
+    }
+    getKey() {
+        return 'G';
+    }
+    getAllModes() {
+        return [OnOffMode.Off, OnOffMode.On];
+    }
+    getInitialMode() {
+        return OnOffMode.Off;
+    }
+    onTick() {
+        this.me.recoilAnimYOld = this.me.recoilAnimY;
+        this.me.recoilAnimY = 0;
+    }
+}
+
+class UnlimitedAmmo extends Module {
+    getName() {
+        return 'Unlimited Ammo';
+    }
+    getKey() {
+        return 'L';
+    }
+    getAllModes() {
+        return [OnOffMode.Off, OnOffMode.On];
+    }
+    getInitialMode() {
+        return OnOffMode.Off;
+    }
+    onTick() {
+        this.me.ammos[this.me.weaponIndex]=101
+    }
+}
+
+
+class AutoWeaponSwap extends Module {
+    getName() {
+        return 'Auto Weapon Swap';
+    }
+    getKey() {
+        return 'H';
+    }
+    getAllModes() {
+        return [OnOffMode.Off, OnOffMode.On];
+    }
+    getInitialMode() {
+        return OnOffMode.Off;
+    }
+    onTick() {
+if (this.me.ammos[this.me.weaponIndex] === 0 && this.me.ammos[0] != this.me.ammos[1]) {
+            this.inputs[10] = -1
+        }
+    }
+}
+
+
 class Krunkbot {
     constructor() {
         this.modules = [];
@@ -257,6 +316,9 @@ class Krunkbot {
     init() {
         this.modules.push(new Aimbot());
         this.modules.push(new AutoReload());
+        this.modules.push(new UnlimitedAmmo());
+        this.modules.push(new AutoWeaponSwap());
+        this.modules.push(new NoRecoil());
         this.modules.push(new WallHack());
         this.modules.push(new AutoBHop());
         this.modules.push(new Menu());
