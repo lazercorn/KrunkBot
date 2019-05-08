@@ -3,7 +3,7 @@
 // @version      2019.05.08
 // @description  Aimbot, Unlimited Ammo, Auto Heal, ESP, Wall Hack, Unlimited Ammo...
 // @author       MR.Coder, adware free version by omercnet
-// @namespace MR.Coder
+// @namespace    omercnet
 // @updateURL    https://github.com/omercnet/KrunkBot/raw/master/krunkerhack.user.js
 // @downloadURL  https://github.com/omercnet/KrunkBot/raw/master/krunkerhack.user.js
 // @match        *://krunker.io/*
@@ -239,7 +239,7 @@ class Menu extends Module {
         return [OnOffMode.Off, OnOffMode.On];
     }
     getInitialMode() {
-        return OnOffMode.Off;
+        return OnOffMode.On;
     }
     onModeChanged() {
         if (this.getCurrentMode() === OnOffMode.On) {
