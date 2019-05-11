@@ -1,4 +1,5 @@
-Adware free version!
+Forked version of https://github.com/MrCoderN/krunker.io-hack-cheat-mod 
+Improved performance and removed adware
 
 ## Features
 * I Key: Aimbot (Quickscopper,Triggerbot,On RMB,Hip Fire)
