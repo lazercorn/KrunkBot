@@ -1,9 +1,15 @@
-<h3>Features</h3>
-• Aimbot (Triggerbot, Quickscoper, Manual, Hip fire) (Various Ranges)</br>
-• FPS Counter</br>
-• BHop (Automatic, Manual)</br>
-</br>
+Adware free version!
 
-<b>Requirements:</b> • Tampermonkey</br>
+## Features
+I Key: Aimbot (Quickscopper,Triggerbot,On RMB,Hip Fire)
+J Key: Auto Reload
+L Key: Unlimited Ammo
+H Key: Auto Weapon Swap
+G Key: No Recoil
+O Key: Wall Hack
+B Key: Bhop (Jump, Slide Jump)
 
-<h2>Userscript: <a href="https://github.com/omercnet/KrunkBot/raw/master/krunkerhack.user.js" target="_blank">CLICK HERE</a></h2>
+## Requirements
+* Tampermonkey
+
+Userscript https://github.com/omercnet/KrunkBot/raw/master/krunkerhack.user.js
